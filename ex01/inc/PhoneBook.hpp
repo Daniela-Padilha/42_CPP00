@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 12:05:20 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/06/28 12:13:58 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/06/28 12:25:45 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/06/28 17:13:12 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int main(int ac, char **av)
-{
-	int i, j;
+#include "Contact.hpp"
 
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBERABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		i = 1;
-		while (av[i])
-		{
-			j = 0;
-			while (av[i][j])
-			{
-				std::cout << (char)toupper(av[i][j]);
-				j++;
-			}
-			i++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+class PhoneBook {
+	public:
+		PhoneBook();
+		~PhoneBook();
+		void	display(PhoneBook book);
+		void	add_contact(Contact contact);
+		Contact	get_contact(int id);
+	private:
+		Contact	contacts[8];
+		int		oldest;
+};
+
+#endif

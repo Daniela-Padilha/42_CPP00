@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 12:05:20 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/06/28 12:13:58 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/06/28 12:36:09 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/06/28 16:44:50 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-int main(int ac, char **av)
-{
-	int i, j;
+# include <string>
+# include <iostream>
 
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBERABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		i = 1;
-		while (av[i])
-		{
-			j = 0;
-			while (av[i][j])
-			{
-				std::cout << (char)toupper(av[i][j]);
-				j++;
-			}
-			i++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+class Contact {
+	public:
+		Contact();
+		~Contact();
+
+		std::string get_info();
+		void		setinfo();
+
+	private:
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string phone_number;
+		std::string darkest_secret;
+};
+
+#endif

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/06/27 15:50:07 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/06/28 12:56:01 by ddo-carm         ###   ########.fr        #
+#    Created: 2025/06/28 12:21:41 by ddo-carm          #+#    #+#              #
+#    Updated: 2025/06/28 12:55:57 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,18 @@
 # /__________)                                        (__________\ 
 
 
-NAME = megaphone
+NAME = phonebook
 SRCS_D = .
+INC_D = ./inc
 
 #source files
-SRC = $(SRCS_D)/megaphone.cpp \
+SRC = $(SRCS_D)/PhoneBook.cpp \
+		$(SRCS_D)/Contact.cpp \
+		$(SRCS_D)/main.cpp \
 		
+#include files
+INC = $(INC_D)/PhoneBook.hpp \
+		$(INC_D)/Contact.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
@@ -51,12 +57,12 @@ VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 all: $(NAME) 
 
-$(NAME): $(OBJ)
-	$(COMP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(INC)
+	$(COMP) $(CPPFLAGS) $(OBJ) -I $(INC_D) -o $(NAME)
 	@echo $(BGRN)"✨Compilation completed✨"$(RES)
 
 %.o: %.cpp
-	@$(COMP) $(CPPFLAGS) -c $< -o $@
+	@$(COMP) $(CPPFLAGS) -I $(INC_D) -c $< -o $@
 	@echo $(BMAG)"Compiling..."$(RES)
 
 #          ________________________________________________
