@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:25:45 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/02 13:07:21 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/02 23:58:29 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 class PhoneBook {
 	public:
-		void	display(PhoneBook book);
-		void	add_contact(Contact contact);
-		Contact	get_contact(int id);
+		PhoneBook();
+		void	display_contact(int id) const;
+		void	get_contact() const;
+		void	add_contact();
 
 	private:
 		Contact	contacts[8];
 		int		oldest;
+		int		total;
 };
 
 #endif

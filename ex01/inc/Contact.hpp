@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:36:09 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/02 13:27:07 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:43:01 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
+# include <cstdlib>
 
 class Contact {
 	public:
