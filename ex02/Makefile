@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
+#    By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/03 01:50:51 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/07/03 01:51:52 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/07/11 14:46:25 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,16 @@
 # /__________)                                        (__________\ 
 
 
-NAME = phonebook
+NAME = account
 SRCS_D = .
 INC_D = .
 
 #source files
 SRC = $(SRCS_D)/Account.cpp \
 		$(SRCS_D)/tests.cpp
+
+#include files
+INC = $(INC_D)/Account.hpp
 
 #object files
 OBJ = $(SRC:.cpp=.o)
